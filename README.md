@@ -2,22 +2,49 @@
 
 Notes on installing Arch on the HP Zbook G5.
 
-Arch works fine on the HP Zbook and its accociated dock.
+Arch works fine on the HP Book and its associated dock.
 
-## Base installing
+# Base install
 
 [Follow basic install guide](https://wiki.archlinux.org/index.php/Installation_guide) as usual.
 
 The arch wiki has gained a [dedicated page for the zbook
 G5](https://wiki.archlinux.org/index.php/HP_Zbook_Studio_G5) recently, which
-notes most everything important for a base install.
+notes most everything important to do in addition to a base install.
 
-## HiDPI
+I used grub, be sure to have `GRUB_CMDLINE_LINUX_DEFAULT="quiet nvidia-drm.modeset=1` in `/etc/default/grub` else no boot for you. If you forget this manually add it to the grub boot config, boot and add it to default, then run `grub-mkconfig` again.
+
+I use i3-blocks and Xorg. The Nvidia Geforce P2000 works fine with the propriety
+Nvidia drivers.
+
+
+# Post Install
+
+Post-install is ansible driven as usual: https://github.com/sthysel/ansible-klipwerf the G5 is `twinks`.
+
+
+
+# HiDPI
 
 Using the DPI screen and a large HD monitor https://wiki.archlinux.org/index.php/HiDPI
 
 
 # system notes
+
+## lsblk
+
+```
+$ lsblk
+
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+nvme0n1     259:0    0 953.9G  0 disk 
+├─nvme0n1p1 259:1    0   360M  0 part /boot
+├─nvme0n1p2 259:2    0   128M  0 part 
+├─nvme0n1p3 259:3    0 466.7G  0 part 
+├─nvme0n1p4 259:4    0 465.6G  0 part /
+├─nvme0n1p5 259:5    0   980M  0 part 
+└─nvme0n1p6 259:6    0  20.2G  0 part 
+```
 
 ## lspci
 
