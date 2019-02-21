@@ -1,2 +1,2 @@
 # arch-hp-zbook-g5
-Install Arch on the HP Zbook G%
+Install Arch on the HP Zbook G5
