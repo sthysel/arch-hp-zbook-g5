@@ -14,7 +14,7 @@ notes most everything important to do in addition to a base install.
 
 I used grub, be sure to have `GRUB_CMDLINE_LINUX_DEFAULT="quiet nvidia-drm.modeset=1` in `/etc/default/grub` else no boot for you. If you forget this manually add it to the grub boot config, boot and add it to default, then run `grub-mkconfig` again.
 
-I use i3-blocks and Xorg, started with gdm and compiz as compositor. The Nvidia
+I use i3-gaps and Xorg, started with gdm and compiz as compositor. The Nvidia
 Geforce P2000 works fine with the propriety Nvidia drivers.
 
 
